@@ -78,6 +78,7 @@
             //const plane = BABYLON.MeshBuilder.CreatePlane("plane", {sourcePlane: abstractPlane, sideOrientation: BABYLON.Mesh.DOUBLESIDE});
             const plane = BABYLON.MeshBuilder.CreatePlane("plane", {height:200, width: 100, sideOrientation: BABYLON.Mesh.DOUBLESIDE});
             plane.rotation.x = Math.PI / 2;
+            plane.rotation.y = Math.PI / 2;
             
             // The first parameter can be used to specify which mesh to import. Here we import all meshes
             BABYLON.SceneLoader.ImportMesh("", "scenes/", "BUSTEFinal2.stl", scene, function (newMeshes) {
