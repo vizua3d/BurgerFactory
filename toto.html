@@ -76,7 +76,7 @@
             //const abstractPlane = BABYLON.Plane.FromPositionAndNormal(new BABYLON.Vector3(1, 1, 1), new BABYLON.Vector3(0.2, 0.5, -1));
 
             //const plane = BABYLON.MeshBuilder.CreatePlane("plane", {sourcePlane: abstractPlane, sideOrientation: BABYLON.Mesh.DOUBLESIDE});
-            const plane = BABYLON.MeshBuilder.CreatePlane("plane", {height:20000, width: 10000});
+            const plane = BABYLON.MeshBuilder.CreatePlane("plane", {height:2000, width: 1000}, {sideOrientation: BABYLON.Mesh.DOUBLESIDE});
             // The first parameter can be used to specify which mesh to import. Here we import all meshes
             BABYLON.SceneLoader.ImportMesh("", "scenes/", "BUSTEFinal2.stl", scene, function (newMeshes) {
                 // Set the target of the camera to the first imported mesh
