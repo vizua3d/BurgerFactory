@@ -13,5 +13,6 @@ async function initApp() {
     viewportProperties: {
       defaultControllerType: SDK3DVerse.controller_type.orbit,
     },
+    startSimulation: 'on-assets-loaded'
   });
 }
