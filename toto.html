@@ -81,11 +81,22 @@
             //plane.rotation.z = Math.PI / 2;
             
             // The first parameter can be used to specify which mesh to import. Here we import all meshes
-            BABYLON.SceneLoader.ImportMesh("", "scenes/", "BUSTEFinal2.stl", scene, function (newMeshes) {
+            BABYLON.SceneLoader.ImportMesh("", "scenes/", "BUSTEFinal2.stl", scene, function (buste) {
                 // Set the target of the camera to the first imported mesh
-                camera.target = newMeshes[0];
+                camera.target = buste[0];
             });
         
+
+            let busteCSG = BABYLON.CSG.FromMesh(buste);
+            let planeCSG = BABYLON.CSG.FromMesh(plane);
+
+            let booleanCSG = busteCSG.subtract(planeCSG);
+
+            let newMesh = booleanCSG.toMesh("newMesh", null, scene);
+
+            buste.visibility = false;
+            plane.visibility = false;
+
             // Move the light with the camera
             scene.registerBeforeRender(function () {
                 light.position = camera.position;
